@@ -1,0 +1,227 @@
+.app-wrapper {
+    background-color: #0d2562;
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+    height: 98vh;
+}
+
+.media-controls {
+    font-family: sans-serif;
+    text-align: center;
+    position: relative;
+    height: 80%;
+}
+
+.play-pause-btn {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.music-select-btn {
+    border: none;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    padding: 45px 0;
+    cursor: pointer;
+    height: 10em;
+    width: 10em;
+    font-size: 1.2rem;
+}
+
+.time-select-btn {
+    border: none;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    padding: 22px;
+    cursor: pointer;
+    height: 10em;
+    width: 10em;
+    font-size: 1.2rem;
+}
+
+.music-select-btn img {
+    width: 50%;
+    height: 50%;
+}
+
+.play-pause-btn.play::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 46%;
+    transform: translateY(-50%);
+    width: 15em;
+    height: 15em;
+    background-image: url('./icons/play.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.play-pause-btn.pause::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 46%;
+    transform: translateY(-50%);
+    width: 15em;
+    height: 14em;
+    background-image: url('./icons/pause.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.time-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 10%;
+    max-width: 10vw;
+    gap: 20px;
+    height: inherit;
+}
+
+.sound-picker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 80%;
+    max-width: 10vw;
+    gap: 20px;
+    height: inherit;
+}
+
+
+.media-play-pause-btn {
+    color: #fff;
+}
+
+.media-play-pause-btn:hover {
+    color: red;
+}
+
+.elapsed-time {
+    color: white;
+    position: absolute;
+    bottom: 10%;
+    left: 48%;
+    font-size: 3em;
+}
+
+/* VIDEO */
+.video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 0;
+    width: 100vw;
+    transform: translate(-50%, -50%);
+    opacity: 0.5;
+}
+
+.media-controls {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    flex: 1;
+}
+
+.media-controls svg.range-outline,
+.media-controls svg.seeker-outline {
+    position: absolute;
+    height: 52.5%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    pointer-events: none;
+}
+
+.media-controls svg.range-outline,
+.media-controls svg.seeker-outline circle {
+    transition: all 0.2s ease-in-out;
+}
+
+@media (max-width: 760px) {
+    .app-wrapper {
+        height: 95vh;
+    }
+
+    .media-controls svg.range-outline,
+    .media-controls svg.seeker-outline {
+        position: absolute;
+        height: 35vh;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-90deg);
+        pointer-events: none;
+    }
+
+    .music-select-btn {
+        border: none;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+        padding: 30px 0;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 9em;
+        width: 9em;
+        font-size: 0.9rem;
+    }
+
+    .music-select-btn img {
+        width: 50%;
+        height: 50%;
+    }
+
+    .sound-picker {
+        max-width: 100%;
+        gap: 10px;
+        left: 80%;
+        top: -1em;
+    }
+
+    .time-list{
+        left:7%;
+        top: -1em;
+    }
+
+    .time-select-btn{
+        font-size: 0.9rem;
+        height: 9em;
+        width: 9em;
+    }
+
+    .play-pause-btn.play::before {
+        left: 39%;
+    }
+
+    .play-pause-btn.pause::before {
+        left: 37%;
+    }
+
+    .elapsed-time {
+        left: 44%;
+        bottom: 10%;
+    }
+
+    .video {
+        height: 100vh;
+        width: auto;
+    }
+}
